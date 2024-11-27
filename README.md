@@ -1,4 +1,4 @@
-# Knowledge Distillatoin for (Expressive) GNNs
+# Knowledge Distillation for (Expressive) GNNs
 
 Code repository for our paper [_"Is Expressivity Essential for the Predictive Performance of Graph Neural Networks?"_](https://openreview.net/pdf?id=5v7hpSy3Ir) (SciForDL @ NeurIPS 2024).
 
