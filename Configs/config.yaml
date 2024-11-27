@@ -1,0 +1,13 @@
+{
+  "DATA_PATH" : "./datasets",
+  "RESULTS_PATH" : "./Results",
+  "SPLITS_PATH" : "./Configs/dataset_splits",
+  "TESTS_PATH" : "./Tests",
+  "MODELS_PATH": "./Models/trained_models",
+  "EMBS_PATH": "./Embs/",
+  "IMGS_PATH": "./Imgs/",
+  "CONFIGS_PATH": "./Configs",
+  "AUTO_GENERATED_CONFIGS_PATH": "./Configs/Auto",
+  "use_wandb_tracking" : True,
+  "project": "ETv2"
+}

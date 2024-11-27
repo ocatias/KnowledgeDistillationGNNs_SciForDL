@@ -1,0 +1,65 @@
+{
+    "dataset":
+    {
+        "ZINC": "--batch_size 128 --epochs 1000 --lr 0.001 --lr_schedule_patience 20 --lr_scheduler ReduceLROnPlateau --lr_scheduler_decay_rate 0.5 --min_lr 1e-05",
+        "ogbg-molhiv": "--batch_size 32 --drop_out 0.5 --epochs 100 --lr 0.001 --pooling mean --lr_scheduler None",
+        "qm9": "--epochs 200 --lr_scheduler ReduceLROnPlateau --lr_schedule_patience 5 --min_lr 1e-07 --batch_size 32 --pooling mean --lr 0.001"
+    },
+
+    "model":
+    {
+        "GIN":
+        {
+            "ZINC": "-emb_dim 256 --num_layer 5 --pooling sum",
+            "ogbg-molhiv": "--emb_dim 64 --num_layer 4 --pooling mean"
+        },
+        "CWN":
+        {
+            "ZINC": "--drop_out 0.5 --emb_dim 256 --lifting_cycle_len 8 --num_layer 5 --pooling mean --JK concat --pooling mean",
+            "ogbg-molhiv": "--emb_dim 64 --lifting_cycle_len 6 --num_layer 4 --pooling mean --JK concat",
+            "qm9": "--emb_dim 128 --num_layer 5 --lifting_cycle_len 6 --lifting_cycle_len 12"
+        },
+        "DSS":
+        {
+            "ZINC": "--drop_out 0.5 --emb_dim 256 --esan_conv ZINCGIN --num_hops 3 --num_layer 5 --policy ego_nets",
+            "ogbg-molhiv": "--emb_dim 64 --num_layer 4 --esan_conv GIN --num_hops 3 --policy ego_nets"
+        },
+        "GSN4":
+        {
+            "ZINC": "--emb_dim 256 --num_layer 5 --pooling sum",
+            "ogbg-molhiv": "--emb_dim 64 --num_layer 4 --pooling mean --lr_scheduler Cosine"
+        },
+        "GSN5":
+        {
+            "ZINC": "--emb_dim 256 --num_layer 5 --pooling sum",
+            "ogbg-molhiv": "--emb_dim 64 --num_layer 4 --pooling mean --lr_scheduler Cosine"
+        },
+        "GSN6":
+        {
+            "ZINC": "--emb_dim 256 --num_layer 5 --pooling sum",
+            "ogbg-molhiv": "--emb_dim 64 --num_layer 4 --pooling mean --lr_scheduler Cosine"
+        },
+        "GSN7":
+        {
+            "ZINC": "--emb_dim 256 --num_layer 5 --pooling sum",
+            "ogbg-molhiv": "--emb_dim 64 --num_layer 4 --pooling mean --lr_scheduler Cosine"
+        },
+        "GSN8":
+        {
+            "ZINC": "--emb_dim 256 --num_layer 5 --pooling sum",
+            "ogbg-molhiv": "--emb_dim 64 --num_layer 4 --pooling mean --lr_scheduler Cosine"
+        },
+        "GSN9":
+        {
+            "ZINC": "--emb_dim 256 --num_layer 5 --pooling sum",
+            "ogbg-molhiv": "--emb_dim 64 --num_layer 5 --pooling sum --lr_scheduler Cosine --drop_out 0.5",
+            "qm9": "--emb_dim 128 --num_layer 5"
+        },
+        "L2GNN":
+        {
+            "ZINC": "--emb_dim 256 --num_layer 5 --pooling sum",
+            "ogbg-molhiv": "--emb_dim 32 --num_layer 2 --pooling sum --lr_scheduler Cosine --drop_out 0.5",
+            "qm9": "--emb_dim 128 --num_layer 5"
+        }
+    }
+}
